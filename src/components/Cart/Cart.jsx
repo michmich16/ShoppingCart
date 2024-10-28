@@ -17,7 +17,7 @@ export const Cart = () => {
                             flexDirection: "column"
                         }}>
                             <h5>{item.title}</h5>
-                            <p>Price: {item.price}</p>
+                            <p>Price: {item.price} DKK</p>
                             <div>
                                 <button onClick={() => subtractFromCart(item)}>-</button>
                                 <p>{item.quantity}</p>
