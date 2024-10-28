@@ -9,7 +9,7 @@ export const CartContextProvider = ({ children }) => {
         let clone = [...cartData];
 
         let foundIndex = clone.findIndex((product) => product.id === item.id)
-        
+
         if (foundIndex !== -1) {
             clone[foundIndex].quantity += 1;
             setCartData(clone);
@@ -18,8 +18,8 @@ export const CartContextProvider = ({ children }) => {
             setCartData([...cartData, { ...item, quantity: 1 }]);
         }
 
-        clone.push(item);
-        setCartData(clone);
+        // clone.push(item);
+        // setCartData(clone);
     };
 
     const removeFromCart = (item) => {
