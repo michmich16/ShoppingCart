@@ -5,9 +5,9 @@ export const Products = () => {
 
     const [products, setProducts] = useState()
 
-    const {cartData} = useContext(CartContext)
+    const {cartData, addToCart} = useContext(CartContext)
 
-    console.log("CartData is", cartData);
+    console.log("products is", products);
 
     useEffect(() => {
         fetch('https://dummyjson.com/products')
@@ -16,7 +16,7 @@ export const Products = () => {
 
     }, [])
 
-    console.log(products)
+    // console.log(products)
 
     return (
         <section>
@@ -26,8 +26,8 @@ export const Products = () => {
                 return(
                     <figure key={item.title}>
                         <h4>{item.title}</h4>
-                        <p>{item.price}</p>
-                        <button>Add To Cart</button>
+                        <p>{item.price} DKK</p>
+                        <button onClick={() => addToCart(item)}>Add To Cart</button>
                     </figure>
                 )
             })}
